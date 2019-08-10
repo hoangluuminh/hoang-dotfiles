@@ -17,9 +17,6 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'w0rp/ale'
 "Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer --cs-completer' }
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-"Plugin 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  "Plugin 'roxma/nvim-yarp'
-  "Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'airblade/vim-gitgutter'
@@ -117,6 +114,7 @@ autocmd Filetype * AnyFoldActivate               " activate for all filetypes
 set foldlevel=0  " close all folds
 
 " Indent-Guide
+autocmd FileType help,nerdtree IndentLinesDisable
 let g:indentLine_char = '┊'
 
 " Buffer and NERDTree conflict fixes
@@ -296,7 +294,7 @@ let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
   let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " enable folder glyph flag
   let g:DevIconsEnableFoldersOpenClose = 1
   let g:DevIconsEnableFolderExtensionPatternMatching = 1
-  let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+  let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
   let g:WebDevIconsNerdTreeBeforeGlyphPadding = ' '
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
