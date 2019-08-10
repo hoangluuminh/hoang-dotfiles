@@ -1,0 +1,19 @@
+export TERM="xterm-256color"
+source ~/.zsh/antigen.zsh
+
+# PowerLevel9K Configs
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_myname dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
+POWERLEVEL9K_CUSTOM_MYNAME="echo '  '"
+POWERLEVEL9K_CUSTOM_MYNAME_FOREGROUND="white"
+POWERLEVEL9K_CUSTOM_MYNAME_BACKGROUND="black"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme denysdovhan/spaceship-prompt
+antigen theme bhilburn/powerlevel9k powerlevel9k
+
+# Tell Antigen that you're done.
+antigen apply

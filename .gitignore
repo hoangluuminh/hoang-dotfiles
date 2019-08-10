@@ -1,0 +1,8 @@
+
+*.swp
+.DS_Store
+vim/.vim/bundle
+vim/.vim/colors
+vim/.vim/doc
+vim/.vim/.DS_Store
+vim/.vim/.netrwhist
