@@ -154,6 +154,9 @@ colorscheme gruvbox
   let g:airline#extensions#branch#enabled = 1
   let g:airline#extensions#tabline#enabled = 1
 
+" auto-pairs CONFIGS
+  let g:AutoPairsShortcutBackInsert=''
+
 " vim-xkbswitch CONFIGS
   let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
 

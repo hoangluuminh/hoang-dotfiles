@@ -24,6 +24,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " features
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'qpkorr/vim-bufkill'
