@@ -10,10 +10,9 @@ POWERLEVEL9K_CUSTOM_MYNAME_FOREGROUND="white"
 POWERLEVEL9K_CUSTOM_MYNAME_BACKGROUND="black"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-
 antigen theme denysdovhan/spaceship-prompt
 antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Tell Antigen that you're done.
 antigen apply
