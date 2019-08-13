@@ -26,7 +26,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
-Plug 'lyokha/vim-xkbswitch'
+if has("gui_macvim")
+  Plug 'lyokha/vim-xkbswitch'
+endif
 Plug 'qpkorr/vim-bufkill'
 
 " colors

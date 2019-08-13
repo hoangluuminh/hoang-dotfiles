@@ -158,7 +158,9 @@ colorscheme gruvbox
   let g:AutoPairsShortcutBackInsert=''
 
 " vim-xkbswitch CONFIGS
-  let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+  if has("gui_macvim")
+    let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+  endif
 
 " indentLine CONFIGS
   let g:indentLine_char = '┊'
