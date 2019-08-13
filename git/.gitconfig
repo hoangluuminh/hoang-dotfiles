@@ -1,0 +1,13 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Lưu Minh Hoàng
+	email = ceriagame@gmail.com
+	username = hoangluuminh
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
