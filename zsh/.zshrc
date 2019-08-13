@@ -5,7 +5,11 @@ source ~/.zsh/antigen.zsh
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_myname dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
-POWERLEVEL9K_CUSTOM_MYNAME="echo '  '"
+osicon=""
+if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+  osicon=""
+fi
+POWERLEVEL9K_CUSTOM_MYNAME="echo ' $osicon '"
 POWERLEVEL9K_CUSTOM_MYNAME_FOREGROUND="white"
 POWERLEVEL9K_CUSTOM_MYNAME_BACKGROUND="black"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
