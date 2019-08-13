@@ -8,6 +8,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sleuth'
 Plug 'ternjs/tern_for_vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'sheerun/vim-polyglot'

@@ -11,4 +11,4 @@ autocmd Filetype * AnyFoldActivate               " activate for all filetypes
 " indentLine
 autocmd FileType help,nerdtree IndentLinesDisable "Fix NERDTree indenting
 " Buffer and NERDTree conflict fixes
-nnoremap <silent> <leader>qq :bp<cr>:bd #<cr>
+nnoremap <silent> <leader>qq :bp<cr>:bd! #<cr>
