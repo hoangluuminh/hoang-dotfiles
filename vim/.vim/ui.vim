@@ -4,7 +4,7 @@ set ruler
 set nowrap
 set splitbelow
 set cursorline
-set termwinsize=10x0
+"set termwinsize=10x0
 set background=dark
 "set macligatures
 set guifont=Iosevka\ Nerd\ Font:h14
