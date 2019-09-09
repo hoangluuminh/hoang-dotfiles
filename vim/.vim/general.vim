@@ -4,7 +4,7 @@ filetype off                  " required
 set encoding=UTF-8
 
 set hlsearch
-set ignorecase
+"set ignorecase
 set clipboard=unnamed
 set foldmethod=expr
 set laststatus=2

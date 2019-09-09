@@ -126,10 +126,20 @@ colorscheme gruvbox
 "
   let g:airline#extensions#coc#enabled = 1
 
+" Ale CONFIGS
+  let g:ale_cs_mcsc_assemblies = [
+    \ '/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll',
+    "\ 'path-to-unityproject/obj/Debug',
+    "\ '/Users/owner/Documents/Game Development/Projects/project-bathunter/obj/Debug'
+    "\ '/Users/owner/Documents/Game Development/Projects/project-earthlings/obj/Debug'
+    \]
+  let g:ale_cs_mcs_options = '-pkg:dotnet'
+  let g:ale_sign_error = 'A✕'
+  let g:ale_sign_warning = 'A△'
 " NERDTree CONFIGS
   "autocmd FileType nerdtree setlocal nolist
   let NERDTreeMinimalUI=1
-  let NERDTreeShowHidden=1
+  "let NERDTreeShowHidden=1
   let NERDTreeIgnore=['\.pyc', '\.o', '\.obj', '\.svn', '\.swp', '\.class', '\.hg', '\.DS_Store']
 
 
@@ -153,14 +163,15 @@ colorscheme gruvbox
   let g:airline#extensions#xkblayout#short_codes = {'VietnameseSimpleTelex': 'VI', 'ABC': 'EN'}
   let g:airline#extensions#branch#enabled = 1
   let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamemod = ':t'
 
 " auto-pairs CONFIGS
   let g:AutoPairsShortcutBackInsert=''
 
 " vim-xkbswitch CONFIGS
-  if has("gui_macvim")
-    let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
-  endif
+  "if has("gui_macvim")
+    "let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+  "endif
 
 " indentLine CONFIGS
   let g:indentLine_char = '┊'
@@ -177,6 +188,7 @@ colorscheme gruvbox
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cs'] = ''
   if exists("g:loaded_webdevicons")
     call webdevicons#refresh() 
   endif
@@ -186,13 +198,4 @@ colorscheme gruvbox
   "" enhance YCM JS completion with tern's smarts
   "autocmd FileType javascript setlocal omnifunc=tern#Complete
 
-" (UNUSED) Ale CONFIGS
-  "let g:ale_cs_mcsc_assemblies = [
-    "\ '/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll',
-    ""\ 'path-to-unityproject/obj/Debug',
-    ""\ '/Users/owner/Documents/Game Development/Projects/project-bathunter/obj/Debug'
-    ""\ '/Users/owner/Documents/Game Development/Projects/project-earthlings/obj/Debug'
-    "\]
-  "let g:ale_sign_error = '✕ '
-  "let g:ale_sign_warning = '△ '
 
