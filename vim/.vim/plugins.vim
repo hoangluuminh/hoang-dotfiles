@@ -13,13 +13,14 @@ Plug 'tpope/vim-sleuth'
 "Plug 'ternjs/tern_for_vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'sheerun/vim-polyglot'
+Plug 'easymotion/vim-easymotion'
 "Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " stylize
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'terryma/vim-smooth-scroll'
+"Plug 'terryma/vim-smooth-scroll'
 Plug 'pseewald/vim-anyfold'
 Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
@@ -33,6 +34,7 @@ Plug 'scrooloose/nerdcommenter'
   "Plug 'lyokha/vim-xkbswitch'
 "endif
 Plug 'qpkorr/vim-bufkill'
+Plug 'liuchengxu/vista.vim'
 
 " colors
 Plug 'dracula/vim'

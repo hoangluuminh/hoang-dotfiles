@@ -1,5 +1,9 @@
 " colors
 colorscheme gruvbox
+if has("gui_running")
+else
+  hi! Normal ctermbg=NONE guibg=NONE
+endif
 
 " COC CONFIGS (Recommended)
   " if hidden is not set, TextEdit might fail.
@@ -126,16 +130,6 @@ colorscheme gruvbox
 "
   let g:airline#extensions#coc#enabled = 1
 
-" Ale CONFIGS
-  let g:ale_cs_mcsc_assemblies = [
-    \ '/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll',
-    "\ 'path-to-unityproject/obj/Debug',
-    "\ '/Users/owner/Documents/Game Development/Projects/project-bathunter/obj/Debug'
-    "\ '/Users/owner/Documents/Game Development/Projects/project-earthlings/obj/Debug'
-    \]
-  let g:ale_cs_mcs_options = '-pkg:dotnet'
-  let g:ale_sign_error = 'A✕'
-  let g:ale_sign_warning = 'A△'
 " NERDTree CONFIGS
   "autocmd FileType nerdtree setlocal nolist
   let NERDTreeMinimalUI=1
@@ -152,9 +146,9 @@ colorscheme gruvbox
   let g:vim_markdown_conceal_code_blocks = 0
 
 " vim-airline CONFIGS
-  if has("gui_running")
+  "if has("gui_running")
     let g:airline_powerline_fonts = 1
-  endif
+  "endif
   "let g:airline_theme = 'powerlineish'
   let g:airline_theme = 'one'
 
@@ -186,13 +180,27 @@ colorscheme gruvbox
   let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
   let g:WebDevIconsNerdTreeBeforeGlyphPadding = ' '
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+  "let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
+  "let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cs'] = ''
   if exists("g:loaded_webdevicons")
     call webdevicons#refresh() 
   endif
 
+" vista CONFIGS
+  let g:vista_default_executive = 'coc'
+  nmap <Leader>v :Vista!!<CR>
+
+" (UNUSED) Ale CONFIGS
+  let g:ale_cs_mcsc_assemblies = [
+    \ '/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll',
+    "\ 'path-to-unityproject/obj/Debug',
+    "\ '/Users/owner/Documents/Game Development/Projects/project-bathunter/obj/Debug'
+    "\ '/Users/owner/Documents/Game Development/Projects/project-earthlings/obj/Debug'
+    \]
+  let g:ale_cs_mcs_options = '-pkg:dotnet'
+  let g:ale_sign_error = 'A✕'
+  let g:ale_sign_warning = 'A△'
 " (UNUSED) YouCompleteMe CONFIGS
   "let g:ycm_autoclose_preview_window_after_insertion = 1
   "" enhance YCM JS completion with tern's smarts
