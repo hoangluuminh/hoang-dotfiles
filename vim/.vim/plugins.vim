@@ -25,6 +25,7 @@ Plug 'pseewald/vim-anyfold'
 Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ryanoasis/vim-devicons'
+Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 
 " features
 Plug 'tpope/vim-surround'

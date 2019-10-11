@@ -1,9 +1,13 @@
 " colors
-colorscheme gruvbox
-if has("gui_running")
-else
-  hi! Normal ctermbg=NONE guibg=NONE
-endif
+  colorscheme gruvbox
+  if has("gui_running")
+  else
+    hi! Normal ctermbg=NONE guibg=NONE
+    hi! SignColumn ctermbg=NONE guibg=NONE
+    hi! GitGutterAdd    ctermfg=2 guifg=#009900 ctermbg=NONE guibg=NONE
+    hi! GitGutterChange ctermfg=3 guifg=#bbbb00 ctermbg=NONE guibg=NONE
+    hi! GitGutterDelete ctermfg=1 guifg=#ff2222 ctermbg=NONE guibg=NONE
+  endif
 
 " COC CONFIGS (Recommended)
   " if hidden is not set, TextEdit might fail.
