@@ -15,6 +15,7 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 "Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'ap/vim-css-color'
 
 " stylize
 Plug 'scrooloose/nerdtree'

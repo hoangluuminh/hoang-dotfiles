@@ -10,6 +10,8 @@
     hi! GitGutterChangeDelete ctermfg=3 guifg=#bbbb00 ctermbg=NONE guibg=NONE
   endif
 
+" COC CONFIGS (Custom)
+  let g:coc_global_extensions=['coc-emmet', 'coc-eslint', 'coc-css', 'coc-html', 'coc-json', 'coc-tslint-plugin', 'coc-tsserver', 'coc-omnisharp']
 " COC CONFIGS (Recommended)
   " if hidden is not set, TextEdit might fail.
   set hidden
