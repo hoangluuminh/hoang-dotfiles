@@ -21,4 +21,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Tell Antigen that you're done.
 antigen apply
 
+# Aliases
+alias ls='lsd'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
