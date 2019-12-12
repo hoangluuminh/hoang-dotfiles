@@ -218,11 +218,13 @@
   let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " enable folder glyph flag
   let g:DevIconsEnableFoldersOpenClose = 1
   let g:DevIconsEnableFolderExtensionPatternMatching = 1
-  let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-  let g:WebDevIconsNerdTreeBeforeGlyphPadding = ' '
+  let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+  let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+  let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+  let g:DevIconsDefaultFolderOpenSymbol = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
-  "let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
-  "let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cs'] = ''
   if exists("g:loaded_webdevicons")
     call webdevicons#refresh() 
