@@ -1,5 +1,5 @@
 " colors
-  colorscheme gruvbox
+  colorscheme nord
   if has("gui_running")
   else
     hi! Normal ctermbg=NONE guibg=NONE
@@ -8,6 +8,11 @@
     hi! GitGutterChange ctermfg=3 guifg=#bbbb00 ctermbg=NONE guibg=NONE
     hi! GitGutterDelete ctermfg=1 guifg=#ff2222 ctermbg=NONE guibg=NONE
     hi! GitGutterChangeDelete ctermfg=3 guifg=#bbbb00 ctermbg=NONE guibg=NONE
+    "hi! Directory ctermfg=204 guifg=#F08080
+    "hi Visual ctermfg=15 ctermbg=240
+    "hi LineNr ctermfg=240 guifg=#808080
+    "hi Comment guifg=#808080
+    "hi CursorLine guibg=#808080 guifg=#FFFAFA
   endif
 
 " COC CONFIGS (Custom)
@@ -142,7 +147,9 @@
   let NERDTreeMinimalUI=1
   "let NERDTreeShowHidden=1
   let NERDTreeIgnore=['\.pyc', '\.o', '\.obj', '\.svn', '\.swp', '\.class', '\.hg', '\.DS_Store']
-
+  let g:NERDTreeDirArrowExpandable = ''
+  let g:NERDTreeDirArrowCollapsible = ''
+  let g:NERDTreeCascadeSingleChildDir = 0
 
 " Prettier CONFIGS
   "let g:prettier#config#use_tabs = 'true'
@@ -157,7 +164,7 @@
     let g:airline_powerline_fonts = 1
   "endif
   "let g:airline_theme = 'powerlineish'
-  let g:airline_theme = 'one'
+  "let g:airline_theme = 'one'
 
   "let g:airline_section_z = '%3p%% %#__accent_bold#%4l%#__restore__#/%L%#__restore__# :%#__accent_bold#%3v '
   let g:airline_section_z = '%L%{g:airline_symbols.maxlinenr} %#__accent_bold#%{g:airline_right_alt_sep} %3l%#__restore__#:%2v'
@@ -216,7 +223,7 @@
   let g:NERDTreeHighlightFolders = 1
   let g:NERDTreeHighlightFoldersFullName = 1
   let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " enable folder glyph flag
-  let g:DevIconsEnableFoldersOpenClose = 1
+  let g:DevIconsEnableFoldersOpenClose = 0
   let g:DevIconsEnableFolderExtensionPatternMatching = 1
   let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
   let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
@@ -226,13 +233,98 @@
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cs'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {}
+  let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*\.test.js'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*\.csproj'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['node_modules'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['src'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['bin'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['docs'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['repositories'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['controllers'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['entities'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['interfaces'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['services'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['helpers'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['public'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['components'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['containers'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['store'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['reducers'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['package-lock.json'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['package.json'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vs'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vscode'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.git'] = ''
   if exists("g:loaded_webdevicons")
     call webdevicons#refresh() 
   endif
 
 " vista CONFIGS
   let g:vista_default_executive = 'coc'
+  let g:vista_fzf_preview = ['right:50%']
+  let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+  let g:vista_echo_cursor_strategy = 'floating_win'
+  let g:vista#renderer#enable_icon = 1
   nmap <Leader>v :Vista!!<CR>
+
+" vim-quickui CONFIGS
+  let g:quickui_border_style = 2
+  " clear all the menus
+  call quickui#menu#reset()
+
+  " install a 'File' menu, use [text, command] to represent an item.
+  call quickui#menu#install('File', [
+              \ [ "New File\t:enew", 'enew' ],
+              \ [ "Open File", 'Files' ],
+              \ [ "Close\t:bd", 'bd' ],
+              \ [ "--", '' ],
+              \ [ "Save\t:w", 'w'],
+              \ [ "Save All\t:wa", 'wa' ],
+              \ [ "--", '' ],
+              \ [ "Exit\t:qa", 'qa' ],
+              \ ])
+
+  " items containing tips, tips will display in the cmdline
+  call quickui#menu#install('Edit', [
+              \ [ "Copy", "call quickui#textbox#open('Copy by switching to Visual Mode (V), highlight text then press (y)', {'close':'button', 'title':'Copy'})", 'help 1' ],
+              \ [ "Paste\t p", 'execute "normal! \p"'],
+              \ [ "Paste Above\t P", 'execute "normal! \P"'],
+              \ [ "--", '' ],
+              \ [ "Find (This file)\t:BLines", 'BLines', 'Find in this file' ],
+              \ [ "Find (Buffers)\t:Lines", 'Lines', 'Find in open buffers' ],
+              \ [ "Find (WD)\t:Rg", 'Rg', 'Find in working directory using Rg' ],
+              \ ])
+
+  call quickui#menu#install('View', [
+              \ [ "Terminal\t:term", 'terminal' ],
+              \ [ "Explorer\t<C-n>", 'NERDTreeToggle' ],
+              \ ])
+
+  " script inside %{...} will be evaluated and expanded in the string
+  call quickui#menu#install("Option", [
+        \ ['Set Spell %{&spell? "Off":"On"}', 'set spell!'],
+        \ ['Set Cursor Line %{&cursorline? "Off":"On"}', 'set cursorline!'],
+        \ ['Set Paste %{&paste? "Off":"On"}', 'set paste!'],
+        \ ])
+
+  " register HELP menu with weight 10000
+  call quickui#menu#install('Help', [
+        \ ["Cheatsheet", 'help index', ''],
+        \ ['Tips', 'help tips', ''],
+        \ ['--',''],
+        \ ["Tutorial", 'help tutor', ''],
+        \ ['Quick Reference', 'help quickref', ''],
+        \ ['Summary', 'help summary', ''],
+        \ ], 10000)
+
+  " enable to display tips in the cmdline
+  let g:quickui_show_tip = 1
+
+  " hit space twice to open menu
+  noremap <space><space> :call quickui#menu#open()<cr>
 
 " (UNUSED) Ale CONFIGS
   let g:ale_cs_mcsc_assemblies = [

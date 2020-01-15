@@ -7,7 +7,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_myname dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 osicon=""
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
-  osicon=""
+  osicon=""
 fi
 POWERLEVEL9K_CUSTOM_MYNAME="echo ' $osicon '"
 POWERLEVEL9K_CUSTOM_MYNAME_FOREGROUND="white"

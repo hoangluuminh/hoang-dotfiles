@@ -19,8 +19,10 @@ Plug 'ap/vim-css-color'
 
 " stylize
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'skywind3000/vim-quickui'
 "Plug 'terryma/vim-smooth-scroll'
 Plug 'pseewald/vim-anyfold'
 Plug 'Yggdroot/indentLine'
@@ -33,6 +35,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'scrooloose/nerdcommenter'
 "if has("gui_macvim")
   "Plug 'lyokha/vim-xkbswitch'
@@ -43,6 +46,7 @@ Plug 'liuchengxu/vista.vim'
 " colors
 Plug 'dracula/vim'
 Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 Plug 'flrnprz/plastic.vim'
 Plug 'fatih/molokai'
 Plug 'morhetz/gruvbox'

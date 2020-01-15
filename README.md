@@ -5,7 +5,7 @@ Tested on: **macOS** 10.14, **Vim** 8.1 (1-1722) on MacVim, **zsh** 5.3 on **iTe
 
 ![allacrity & tmux](previews/preview_tmux.png)
 
-![vim2](previews/preview_vim_2.png)
+![vim2](previews/preview_vim_3.png)
 
 ## Installation
 later
