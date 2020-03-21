@@ -1,13 +1,20 @@
 " colors
   colorscheme nord
+  if exists('+termguicolors')
+    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+  endif
   if has("gui_running")
   else
     hi! Normal ctermbg=NONE guibg=NONE
     hi! SignColumn ctermbg=NONE guibg=NONE
-    hi! GitGutterAdd    ctermfg=2 guifg=#009900 ctermbg=NONE guibg=NONE
-    hi! GitGutterChange ctermfg=3 guifg=#bbbb00 ctermbg=NONE guibg=NONE
-    hi! GitGutterDelete ctermfg=1 guifg=#ff2222 ctermbg=NONE guibg=NONE
-    hi! GitGutterChangeDelete ctermfg=3 guifg=#bbbb00 ctermbg=NONE guibg=NONE
+    hi! LineNr ctermbg=NONE guibg=NONE
+    hi! ALESignColumnWithoutErrors ctermbg=NONE guibg=NONE
+    "hi! GitGutterAdd    ctermfg=2 guifg=#009900 ctermbg=NONE guibg=NONE
+    "hi! GitGutterChange ctermfg=3 guifg=#bbbb00 ctermbg=NONE guibg=NONE
+    "hi! GitGutterDelete ctermfg=1 guifg=#ff2222 ctermbg=NONE guibg=NONE
+    "hi! GitGutterChangeDelete ctermfg=3 guifg=#bbbb00 ctermbg=NONE guibg=NONE
     "hi! Directory ctermfg=204 guifg=#F08080
     "hi Visual ctermfg=15 ctermbg=240
     "hi LineNr ctermfg=240 guifg=#808080
@@ -142,6 +149,20 @@
 "
   let g:airline#extensions#coc#enabled = 1
 
+" Ale CONFIGS
+  let g:ale_linters = {'c': []}
+  let g:ale_linters = {'cpp': []}
+  let g:ale_linters = {
+  \   'javascript': ['eslint', 'standard'],
+  \}
+  let g:ale_fixers = {'javascript': ['prettier', 'eslint', 'standard']}
+  "let g:ale_fix_on_save = 1
+  let g:ale_lint_on_save = 1
+  let g:ale_lint_on_text_changed = 'never'
+  let g:ale_lint_on_insert_leave = 0
+  let g:ale_sign_error = 'A✕'
+  let g:ale_sign_warning = 'A△'
+
 " NERDTree CONFIGS
   "autocmd FileType nerdtree setlocal nolist
   let NERDTreeMinimalUI=1
@@ -165,6 +186,7 @@
   "endif
   "let g:airline_theme = 'powerlineish'
   "let g:airline_theme = 'one'
+  let g:airline_theme = 'nord'
 
   "let g:airline_section_z = '%3p%% %#__accent_bold#%4l%#__restore__#/%L%#__restore__# :%#__accent_bold#%3v '
   let g:airline_section_z = '%L%{g:airline_symbols.maxlinenr} %#__accent_bold#%{g:airline_right_alt_sep} %3l%#__restore__#:%2v'
@@ -244,14 +266,23 @@
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['repositories'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['controllers'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['entities'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['models'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['interfaces'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['services'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['helpers'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['public'] = ''
-  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['components'] = ''
-  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['containers'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['app'] = 'גּ'
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['components'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['containers'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['pages'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['store'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['reducers'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['shared'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['middlewares'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['routes'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['utils'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['styles'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['hooks'] = 'ﯠ'
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['package-lock.json'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['package.json'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore'] = ''
@@ -326,16 +357,6 @@
   " hit space twice to open menu
   noremap <space><space> :call quickui#menu#open()<cr>
 
-" (UNUSED) Ale CONFIGS
-  let g:ale_cs_mcsc_assemblies = [
-    \ '/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll',
-    "\ 'path-to-unityproject/obj/Debug',
-    "\ '/Users/owner/Documents/Game Development/Projects/project-bathunter/obj/Debug'
-    "\ '/Users/owner/Documents/Game Development/Projects/project-earthlings/obj/Debug'
-    \]
-  let g:ale_cs_mcs_options = '-pkg:dotnet'
-  let g:ale_sign_error = 'A✕'
-  let g:ale_sign_warning = 'A△'
 " (UNUSED) YouCompleteMe CONFIGS
   "let g:ycm_autoclose_preview_window_after_insertion = 1
   "" enhance YCM JS completion with tern's smarts

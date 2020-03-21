@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 
 " programming
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
@@ -15,6 +15,7 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 "Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ap/vim-css-color'
 
 " stylize
@@ -55,6 +56,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'reedes/vim-colors-pencil'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'srcery-colors/srcery-vim'
+Plug 'arzg/vim-colors-xcode'
 
 " END OF PlugS LIST
 

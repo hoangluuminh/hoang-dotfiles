@@ -24,4 +24,5 @@ antigen apply
 # Aliases
 alias ls='lsd'
 
+# Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

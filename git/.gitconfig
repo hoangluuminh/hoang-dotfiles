@@ -4,10 +4,19 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Lưu Minh Hoàng
+	name = Lưu Minh Hoàng
 	email = ceriagame@gmail.com
 	username = hoangluuminh
 [core]
 	editor = vim
+	excludesfile = /Users/owner/.gitignore_global
 [merge]
 	tool = vimdiff
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/owner/.stCommitMsg
