@@ -211,8 +211,8 @@
     " to be used in the floating window
     let buf = nvim_create_buf(v:false, v:true)
 
-    " 25% of the height
-    let height = float2nr(&lines * 0.25)
+    " 50% of the height
+    let height = float2nr(&lines * 0.5)
     " 60% of the width
     let width = float2nr(&columns * 0.6)
     " horizontal position (centralized)
@@ -309,48 +309,54 @@
 
 " vim-quickui CONFIGS
   let g:quickui_border_style = 2
+  let g:quickui_color_scheme = 'papercol dark'
   " clear all the menus
   call quickui#menu#reset()
 
   " install a 'File' menu, use [text, command] to represent an item.
   call quickui#menu#install('File', [
-              \ [ "New\t:enew", 'enew' ],
-              \ [ "Open\t:Files", 'Files' ],
-              \ [ "Close\t:bd", 'bd' ],
-              \ [ "--", '' ],
-              \ [ "Save\t:w", 'w'],
-              \ [ "Save All\t:wa", 'wa' ],
-              \ [ "--", '' ],
-              \ [ "Exit\t:qa", 'qa' ],
-              \ ])
+        \ [ "New\t:enew", 'enew' ],
+        \ [ "Open (Git)\t:GFiles", 'GFiles --cached --others --exclude-standard' ],
+        \ [ "Open\t:Files", 'Files' ],
+        \ [ "Close\t:bd", 'bd' ],
+        \ [ "--", '' ],
+        \ [ "Save\t:w", 'w'],
+        \ [ "Save All\t:wa", 'wa' ],
+        \ [ "--", '' ],
+        \ [ "Exit\t:qa", 'qa' ],
+        \ ])
 
   " items containing tips, tips will display in the cmdline
   call quickui#menu#install('Edit', [
-              \ [ "Copy", "call quickui#textbox#open('Copy by switching to Visual Mode (V), highlight text then press (y)', {'close':'button', 'title':'Copy'})", 'Copy dialog' ],
-              \ [ "Paste\t p", 'execute "normal! \p"'],
-              \ [ "Paste Above\t P", 'execute "normal! \P"'],
-              \ ])
+        \ [ "Prettify\t:Prettier", 'Prettier' ],
+        \ ['--',''],
+        \ [ "Copy", "call quickui#textbox#open('Copy by switching to Visual Mode (V), highlight text then press (y)', {'close':'button', 'title':'Copy'})", 'Copy dialog' ],
+        \ [ "Paste\t p", 'execute "normal! \p"'],
+        \ [ "Paste Above\t P", 'execute "normal! \P"'],
+        \ ])
 
   call quickui#menu#install('Find', [
-              \ [ "Find (This file)\t:BLines", 'BLines', 'Find in this file' ],
-              \ [ "Find (This file)\t:BLines", 'BLines', 'Find in this file' ],
-              \ [ "Find (Buffers)\t:Lines", 'Lines', 'Find in open buffers' ],
-              \ [ "Find (Project)\t:Rg", 'Rg', 'Find in working directory using Rg' ],
-              \ ])
+        \ [ "Find (This File)\t:BLines", 'BLines', 'Find in this file' ],
+        \ [ "Find (Buffers)\t:Lines", 'Lines', 'Find in open buffers' ],
+        \ [ "Find (Project)\t:Rg", 'Rg', 'Find in working directory using Rg' ],
+        \ ])
 
   call quickui#menu#install('Go', [
-              \ [ "Buffers\t:Buffers", 'Buffers', 'Show list of opened files' ],
-              \ [ "Terminal\t:term", 'terminal' ],
-              \ [ "Explorer\tדּ n", 'NERDTreeToggle' ],
-              \ ])
+        \ [ "Buffers\t:Buffers", 'Buffers', 'Show list of opened files' ],
+        \ ['--',''],
+        \ [ "Terminal\t:term", 'terminal' ],
+        \ [ "Git Diff\t:Gdiff", 'Gdiff', 'View Git Diff of current file' ],
+        \ ['--',''],
+        \ [ "Explorer\tדּ n", 'NERDTreeToggle' ],
+        \ ])
 
   call quickui#menu#install('Window', [
-              \ [ "Split Vertically\tדּ w v", '' ],
-              \ [ "Split Horizontally\tדּ w s", '' ],
-              \ [ "Equally Resize All\tדּ w =", '' ],
-              \ [ "--", '' ],
-              \ [ "Close Window\tדּ w q", '' ],
-              \ ])
+        \ [ "Split Vertically\tדּ w v", 'call feedkeys("\<C-w>v")' ],
+        \ [ "Split Horizontally\tדּ w s", 'call feedkeys("\<C-w>s")' ],
+        \ [ "Equally Resize All\tדּ w =", 'call feedkeys("\<C-w>=")' ],
+        \ [ "--", '' ],
+        \ [ "Close Window\tדּ w q", 'call feedkeys("\<C-w>q")' ],
+        \ ])
 
   " script inside %{...} will be evaluated and expanded in the string
   call quickui#menu#install("Option", [
@@ -371,11 +377,24 @@
         \ ['Summary', 'help summary', ''],
         \ ], 10000)
 
+  " context menu
+  let g:context_menu_k = [
+        \ ["Peek Definition\tK", 'call CocAction("doHover")'],
+        \ [ "--", ],
+        \ [ "Goto Definition\tgd", 'exec "normal \<Plug>(coc-definition)"'],
+        \ [ "Goto Type Definition\tgy", 'exec "normal \<Plug>(coc-type-definition)"'],
+        \ [ "Goto Implementation\tgi", 'exec "normal \<Plug>(coc-implementation)"'],
+        \ [ "Goto References\tgr", 'exec "normal \<Plug>(coc-references)"'],
+        \ ]
+
   " enable to display tips in the cmdline
   let g:quickui_show_tip = 1
 
   " hit space twice to open menu
   noremap <space><space> :call quickui#menu#open()<cr>
+
+  " hit Leader Leader to open context menu
+  nmap <Leader><Leader> :call quickui#tools#clever_context('k', g:context_menu_k, {})<CR>
 
 " (UNUSED) YouCompleteMe CONFIGS
   "let g:ycm_autoclose_preview_window_after_insertion = 1

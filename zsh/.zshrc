@@ -25,5 +25,4 @@ antigen apply
 alias ls='lsd'
 
 # Fuzzy Finder
-export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
