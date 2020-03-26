@@ -150,18 +150,21 @@
   let g:airline#extensions#coc#enabled = 1
 
 " Ale CONFIGS
-  let g:ale_linters = {'c': []}
-  let g:ale_linters = {'cpp': []}
-  let g:ale_linters = {
-  \   'javascript': ['eslint', 'standard'],
-  \}
-  let g:ale_fixers = {'javascript': ['prettier', 'eslint', 'standard']}
-  "let g:ale_fix_on_save = 1
-  let g:ale_lint_on_save = 1
-  let g:ale_lint_on_text_changed = 'never'
-  let g:ale_lint_on_insert_leave = 0
-  let g:ale_sign_error = 'A✕'
-  let g:ale_sign_warning = 'A△'
+  " let g:ale_linters = {'c': []}
+  " let g:ale_linters = {'cpp': []}
+  " let g:ale_linters = {
+  " \   'javascript': ['eslint', 'standard'],
+  " \}
+  " let g:ale_fixers = {'javascript': ['prettier', 'eslint', 'standard']}
+  " let g:ale_fix_on_save = 1
+  " let g:ale_lint_on_save = 1
+  " let g:ale_lint_on_text_changed = 'never'
+  " let g:ale_lint_on_insert_leave = 0
+  " let g:ale_sign_error = ''
+  " let g:ale_sign_warning = ''
+
+" NERD Commenter CONFIGS
+  let g:NERDSpaceDelims = 1
 
 " NERDTree CONFIGS
   "autocmd FileType nerdtree setlocal nolist
@@ -272,9 +275,12 @@
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['helpers'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['public'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['app'] = 'גּ'
-  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['components'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['configs'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['components'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['containers'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['hocs'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['pages'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['assets'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['store'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['reducers'] = ''
   let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['shared'] = ''
@@ -308,8 +314,8 @@
 
   " install a 'File' menu, use [text, command] to represent an item.
   call quickui#menu#install('File', [
-              \ [ "New File\t:enew", 'enew' ],
-              \ [ "Open File", 'Files' ],
+              \ [ "New\t:enew", 'enew' ],
+              \ [ "Open\t:Files", 'Files' ],
               \ [ "Close\t:bd", 'bd' ],
               \ [ "--", '' ],
               \ [ "Save\t:w", 'w'],
@@ -320,25 +326,39 @@
 
   " items containing tips, tips will display in the cmdline
   call quickui#menu#install('Edit', [
-              \ [ "Copy", "call quickui#textbox#open('Copy by switching to Visual Mode (V), highlight text then press (y)', {'close':'button', 'title':'Copy'})", 'help 1' ],
+              \ [ "Copy", "call quickui#textbox#open('Copy by switching to Visual Mode (V), highlight text then press (y)', {'close':'button', 'title':'Copy'})", 'Copy dialog' ],
               \ [ "Paste\t p", 'execute "normal! \p"'],
               \ [ "Paste Above\t P", 'execute "normal! \P"'],
-              \ [ "--", '' ],
-              \ [ "Find (This file)\t:BLines", 'BLines', 'Find in this file' ],
-              \ [ "Find (Buffers)\t:Lines", 'Lines', 'Find in open buffers' ],
-              \ [ "Find (WD)\t:Rg", 'Rg', 'Find in working directory using Rg' ],
               \ ])
 
-  call quickui#menu#install('View', [
+  call quickui#menu#install('Find', [
+              \ [ "Find (This file)\t:BLines", 'BLines', 'Find in this file' ],
+              \ [ "Find (This file)\t:BLines", 'BLines', 'Find in this file' ],
+              \ [ "Find (Buffers)\t:Lines", 'Lines', 'Find in open buffers' ],
+              \ [ "Find (Project)\t:Rg", 'Rg', 'Find in working directory using Rg' ],
+              \ ])
+
+  call quickui#menu#install('Go', [
+              \ [ "Buffers\t:Buffers", 'Buffers', 'Show list of opened files' ],
               \ [ "Terminal\t:term", 'terminal' ],
-              \ [ "Explorer\t<C-n>", 'NERDTreeToggle' ],
+              \ [ "Explorer\tדּ n", 'NERDTreeToggle' ],
+              \ ])
+
+  call quickui#menu#install('Window', [
+              \ [ "Split Vertically\tדּ w v", '' ],
+              \ [ "Split Horizontally\tדּ w s", '' ],
+              \ [ "Equally Resize All\tדּ w =", '' ],
+              \ [ "--", '' ],
+              \ [ "Close Window\tדּ w q", '' ],
               \ ])
 
   " script inside %{...} will be evaluated and expanded in the string
   call quickui#menu#install("Option", [
-        \ ['Set Spell %{&spell? "Off":"On"}', 'set spell!'],
-        \ ['Set Cursor Line %{&cursorline? "Off":"On"}', 'set cursorline!'],
-        \ ['Set Paste %{&paste? "Off":"On"}', 'set paste!'],
+        \ ['%{&wrap? "  ":" "} Line Wrap', 'set wrap!'],
+        \ ['%{&number? "  ":" "} Show Line Number', 'set spell!'],
+        \ ['%{&cursorline? "  ":" "} Show Cursor Line', 'set cursorline!'],
+        \ ['%{&spell? "  ":" "} Spellcheck', 'set spell!'],
+        \ ['%{&paste? "  ":" "} Formatted Pasting', 'set paste!'],
         \ ])
 
   " register HELP menu with weight 10000
