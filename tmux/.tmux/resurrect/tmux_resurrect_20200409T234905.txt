@@ -1,0 +1,27 @@
+pane	0	1	:zsh	1	:*	1	:/Users/owner/workspace/bambi/web/bambi-api	0	node	:npm  
+pane	0	1	:zsh	1	:*	2	:/Users/owner/workspace/docker/mysql/database	0	tail	:tail -f query.log
+pane	0	1	:zsh	1	:*	3	:/Users/owner/workspace/bambi/web/bambi-admin	0	node	:npm  
+pane	0	1	:zsh	1	:*	4	:/Users/owner/workspace/bambi/web/bambi-admin	0	zsh	:
+pane	0	1	:zsh	1	:*	5	:/Users/owner/workspace/bambi/web/bambi-api	1	zsh	:
+pane	0	1	:zsh	1	:*	6	:/Users/owner/workspace/bambi/web/bambi-admin/src/features/shared	0	Python	:/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -O /usr/local/bin/ranger
+pane	0	2	:nvim	0	:	1	:/Users/owner/workspace/bambi/web/bambi-admin	1	nvim	:nvim
+pane	0	3	:nvim	0	:	1	:/Users/owner/workspace/bambi/web/bambi-client	1	zsh	:
+pane	0	4	:zsh	0	:	1	:/Users/owner/workspace/bambi/web/bambi-api	1	nvim	:nvim
+pane	0	5	:zsh	0	:	1	:/Users/owner	1	zsh	:
+pane	0	6	:zsh	0	:-	1	:/Users/owner/workspace/school/VehicleMarket-ecommerce/ecommerce-api	0	zsh	:
+pane	0	6	:zsh	0	:-	2	:/Users/owner/workspace/school/VehicleMarket-ecommerce/ecommerce-fe-shop	0	zsh	:
+pane	0	6	:zsh	0	:-	3	:/Users/owner/workspace/school/VehicleMarket-ecommerce	0	zsh	:
+pane	0	6	:zsh	0	:-	4	:/Users/owner/workspace/school/VehicleMarket-ecommerce/ecommerce-api	1	zsh	:
+pane	0	6	:zsh	0	:-	5	:/Users/owner/workspace/school/VehicleMarket-ecommerce/ecommerce-fe-shop	0	zsh	:
+pane	0	6	:zsh	0	:-	6	:/Users/owner/workspace/school/VehicleMarket-ecommerce/ecommerce-api/app	0	Python	:/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -O /usr/local/bin/ranger
+pane	0	7	:zsh	0	:	1	:/Users/owner/workspace/school/VehicleMarket-ecommerce/ecommerce-api	1	nvim	:nvim
+pane	0	8	:nvim	0	:	1	:/Users/owner/workspace/school/VehicleMarket-ecommerce/ecommerce-fe-shop	1	nvim	:nvim
+window	0	1	1	:*	da6c,210x47,0,0{105x47,0,0[105x18,0,0,1,105x15,0,19,2,105x12,0,35,3],104x47,106,0[104x18,106,0,4,104x10,106,19,28,104x17,106,30,5]}
+window	0	2	0	:	c6e3,210x47,0,0,6
+window	0	3	0	:	c6e4,210x47,0,0,7
+window	0	4	0	:	c6e5,210x47,0,0,8
+window	0	5	0	:	c6e6,210x47,0,0,9
+window	0	6	0	:-	e983,210x47,0,0{105x47,0,0[105x15,0,0,10,105x15,0,16,11,105x15,0,32,12],104x47,106,0[104x15,106,0,15,104x15,106,16,27,104x15,106,32,24]}
+window	0	7	0	:	63a5,210x47,0,0,16
+window	0	8	0	:	63a6,210x47,0,0,17
+state	0	
