@@ -355,6 +355,8 @@
         \ [ "Split Horizontally\tדּ w s", 'call feedkeys("\<C-w>s")' ],
         \ [ "Equally Resize All\tדּ w =", 'call feedkeys("\<C-w>=")' ],
         \ [ "--", '' ],
+        \ [ "Toggle Fullscreen Window\tדּ w m", 'call feedkeys("\<C-w>m")' ],
+        \ [ "--", '' ],
         \ [ "Close Window\tדּ w q", 'call feedkeys("\<C-w>q")' ],
         \ ])
 

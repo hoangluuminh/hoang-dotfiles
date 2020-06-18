@@ -43,6 +43,7 @@ Plug 'scrooloose/nerdcommenter'
 "endif
 Plug 'qpkorr/vim-bufkill'
 Plug 'liuchengxu/vista.vim'
+Plug 'dhruvasagar/vim-zoom'
 
 " colors
 Plug 'dracula/vim'

@@ -7,3 +7,4 @@ vim/.vim/doc
 vim/.vim/.DS_Store
 vim/.vim/.netrwhist
 vim/.vim/plugged
+tmux/.tmux/resurrect
