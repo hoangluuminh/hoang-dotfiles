@@ -1,0 +1,27 @@
+{
+  "segments": [
+    "virtual_env", 
+    {
+      "type": "stdout",
+      "command": ["echo", ""],
+      "fg_color": 15,
+      "bg_color": 8
+    },
+    "time",
+    "ssh", 
+    "cwd", 
+    "git", 
+    "hg", 
+    "newline",
+    "exit_code",
+    "root"
+  ],
+  "mode": "patched",
+  "cwd": {
+    "max_depth": 4
+  },
+  "vcs": {
+    "show_symbol": true
+  },
+  "theme": "default"
+}
