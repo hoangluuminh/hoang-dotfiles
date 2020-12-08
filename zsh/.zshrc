@@ -26,3 +26,6 @@ alias ls='lsd'
 
 # Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# RubyGems
+export GEM_HOME="$HOME/.gem"

@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 " PlugS LIST
 
 " programming
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -42,22 +42,22 @@ Plug 'scrooloose/nerdcommenter'
   "Plug 'lyokha/vim-xkbswitch'
 "endif
 Plug 'qpkorr/vim-bufkill'
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 Plug 'dhruvasagar/vim-zoom'
 
 " colors
-Plug 'dracula/vim'
-Plug 'rakr/vim-one'
-Plug 'joshdick/onedark.vim'
-Plug 'flrnprz/plastic.vim'
-Plug 'fatih/molokai'
-Plug 'morhetz/gruvbox'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'arcticicestudio/nord-vim'
-Plug 'reedes/vim-colors-pencil'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'srcery-colors/srcery-vim'
-Plug 'arzg/vim-colors-xcode'
+" Plug 'dracula/vim'
+" Plug 'rakr/vim-one'
+" Plug 'joshdick/onedark.vim'
+" Plug 'flrnprz/plastic.vim'
+" Plug 'fatih/molokai'
+" Plug 'morhetz/gruvbox'
+" Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+" Plug 'reedes/vim-colors-pencil'
+" Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'srcery-colors/srcery-vim'
+" Plug 'arzg/vim-colors-xcode'
 
 " END OF PlugS LIST
 
