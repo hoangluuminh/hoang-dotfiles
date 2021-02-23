@@ -42,7 +42,7 @@ try:
     if result_rows.__len__() > 0:
         result = result_rows[0].name
     else:
-        result = "[No ongoing task. 🎉]"
+        result = "[No task.]"
 
     f = open(path + "worklog.txt", "w")
     f.write(result)
