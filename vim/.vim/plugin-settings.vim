@@ -362,11 +362,11 @@
 
   " script inside %{...} will be evaluated and expanded in the string
   call quickui#menu#install("Option", [
-        \ ['%{&wrap? "  ":" "} Line Wrap', 'set wrap!'],
-        \ ['%{&number? "  ":" "} Show Line Number', 'set spell!'],
-        \ ['%{&cursorline? "  ":" "} Show Cursor Line', 'set cursorline!'],
-        \ ['%{&spell? "  ":" "} Spellcheck', 'set spell!'],
-        \ ['%{&paste? "  ":" "} Formatted Pasting', 'set paste!'],
+        \ ['%{&wrap? " ":"  "} Line Wrap', 'set wrap!'],
+        \ ['%{&number? " ":"  "} Show Line Number', 'set number!'],
+        \ ['%{&cursorline? " ":"  "} Show Cursor Line', 'set cursorline!'],
+        \ ['%{&spell? " ":"  "} Spellcheck', 'set spell!'],
+        \ ['%{&paste? " ":"  "} Formatted Pasting', 'set paste!'],
         \ ])
 
   " register HELP menu with weight 10000
