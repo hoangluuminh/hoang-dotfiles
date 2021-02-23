@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# @raycast.title Current Worklog
+# @raycast.title Current Task
 # @raycast.author Luu Minh Hoang
 # @raycast.authorURL https://github.com/hoangluuminh
 # @raycast.description Refresh Notion worklog.
