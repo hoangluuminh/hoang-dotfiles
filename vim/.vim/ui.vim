@@ -7,7 +7,7 @@ set cursorline
 "set termwinsize=10x0
 set background=dark
 "set macligatures
-set guifont=Iosevka\ Nerd\ Font:h16
+set guifont=Iosevka\ Nerd\ Font:h14
 
 " show invisibles
 set list

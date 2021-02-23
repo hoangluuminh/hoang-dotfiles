@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # @raycast.title Switch Worklog
-# @raycast.author Caleb Stauffer
-# @raycast.authorURL https://github.com/crstauf
-# @raycast.description Test download and upload connection speed using [Speedtest](https://www.speedtest.net/apps/cli).
+# @raycast.author Luu Minh Hoang
+# @raycast.authorURL https://github.com/hoangluuminh
+# @raycast.description Switch Notion worklog.
 
 # @raycast.icon images/notion.png
 # @raycast.mode silent
