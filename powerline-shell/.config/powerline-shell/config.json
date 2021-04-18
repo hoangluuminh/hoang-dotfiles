@@ -1,6 +1,5 @@
 {
   "segments": [
-    "virtual_env", 
     {
       "type": "stdout",
       "command": ["echo", ""],
@@ -11,7 +10,6 @@
     "ssh", 
     "cwd", 
     "git", 
-    "hg", 
     "newline",
     "exit_code",
     "root"
