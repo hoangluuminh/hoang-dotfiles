@@ -4,3 +4,4 @@ eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" "hook" $argv |
 # <<< conda initialize <<<
 
 set -gx JAVA_HOME (/usr/libexec/java_home -v 11.0.9.1)
+set -gx CHROME_EXECUTABLE /Applications/Microsoft\ Edge.app/Contents/MacOS/Microsoft\ Edge

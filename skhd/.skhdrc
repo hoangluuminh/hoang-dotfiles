@@ -1,0 +1,149 @@
+#  NOTE(koekeishiya): A list of all built-in modifier and literal keywords can
+#                     be found at https://github.com/koekeishiya/skhd/issues/1
+#
+#                     A hotkey is written according to the following rules:
+#
+#                       hotkey       = <mode> '<' <action> | <action>
+#
+#                       mode         = 'name of mode' | <mode> ',' <mode>
+#
+#                       action       = <keysym> '[' <proc_map_lst> ']' | <keysym> '->' '[' <proc_map_lst> ']'
+#                                      <keysym> ':' <command>          | <keysym> '->' ':' <command>
+#                                      <keysym> ';' <mode>             | <keysym> '->' ';' <mode>
+#
+#                       keysym       = <mod> '-' <key> | <key>
+#
+#                       mod          = 'modifier keyword' | <mod> '+' <mod>
+#
+#                       key          = <literal> | <keycode>
+#
+#                       literal      = 'single letter or built-in keyword'
+#
+#                       keycode      = 'apple keyboard kVK_<Key> values (0x3C)'
+#
+#                       proc_map_lst = * <proc_map>
+#
+#                       proc_map     = <string> ':' <command> | <string>     '~' |
+#                                      '*'      ':' <command> | '*'          '~'
+#
+#                       string       = '"' 'sequence of characters' '"'
+#
+#                       command      = command is executed through '$SHELL -c' and
+#                                      follows valid shell syntax. if the $SHELL environment
+#                                      variable is not set, it will default to '/bin/bash'.
+#                                      when bash is used, the ';' delimeter can be specified
+#                                      to chain commands.
+#
+#                                      to allow a command to extend into multiple lines,
+#                                      prepend '\' at the end of the previous line.
+#
+#                                      an EOL character signifies the end of the bind.
+#
+#                       ->           = keypress is not consumed by skhd
+#
+#                       *            = matches every application not specified in <proc_map_lst>
+#
+#                       ~            = application is unbound and keypress is forwarded per usual, when specified in a <proc_map>
+#
+#  NOTE(koekeishiya): A mode is declared according to the following rules:
+#
+#                       mode_decl = '::' <name> '@' ':' <command> | '::' <name> ':' <command> |
+#                                   '::' <name> '@'               | '::' <name>
+#
+#                       name      = desired name for this mode,
+#
+#                       @         = capture keypresses regardless of being bound to an action
+#
+#                       command   = command is executed through '$SHELL -c' and
+#                                   follows valid shell syntax. if the $SHELL environment
+#                                   variable is not set, it will default to '/bin/bash'.
+#                                   when bash is used, the ';' delimeter can be specified
+#                                   to chain commands.
+#
+#                                   to allow a command to extend into multiple lines,
+#                                   prepend '\' at the end of the previous line.
+#
+#                                   an EOL character signifies the end of the bind.
+
+# add an on_enter command to the default mode
+# :: default : chunkc border::color 0xff775759
+#
+# defines a new mode 'test' with an on_enter command, that captures keypresses
+# :: test @ : chunkc border::color 0xff24ccaa
+#
+# from 'default' mode, activate mode 'test'
+# cmd - x ; test
+#
+# from 'test' mode, activate mode 'default'
+# test < cmd - x ; default
+#
+# launch a new terminal instance when in either 'default' or 'test' mode
+# default, test < cmd - return : open -na /Applications/Terminal.app
+
+# application specific bindings
+#
+# cmd - n [
+#     "kitty"       : echo "hello kitty"
+#     *             : echo "hello everyone"
+#     "qutebrowser" : echo "hello qutebrowser"
+#     "terminal"    ~
+#     "finder"      : false
+# ]
+
+# specify a file that should be included as an additional config-file.
+# treated as an absolutepath if the filename begins with '/' otherwise
+# the file is relative to the path of the config-file it was loaded from.
+#
+# .load "/Users/Koe/.config/partial_skhdrc"
+# .load "partial_skhdrc"
+
+# prevent skhd from monitoring events for specific applications.
+#
+# .blacklist [
+#    "kitty"
+#    "terminal"
+#    "qutebrowser"
+# ]
+
+# navigating between displays
+ctrl + lshift - left: yabai -m display --focus 1
+ctrl + lshift - right: yabai -m display --focus 2
+ctrl + lshift - 1: yabai -m display --focus 1
+ctrl + lshift - 2: yabai -m display --focus 2
+
+# focus window
+ctrl + lalt - left : yabai -m window --focus west
+ctrl + lalt - down : yabai -m window --focus south
+ctrl + lalt - up : yabai -m window --focus north
+ctrl + lalt - right : yabai -m window --focus east
+
+# swap window
+ctrl + lalt + lshift - left : yabai -m window --swap west
+ctrl + lalt + lshift - down : yabai -m window --swap south
+ctrl + lalt + lshift - up : yabai -m window --swap north
+ctrl + lalt + lshift - right : yabai -m window --swap east
+
+# move window between displays
+ctrl + lalt + rshift - left : yabai -m window --display 1
+ctrl + lalt + rshift - right : yabai -m window --display 2
+
+# resize window
+ctrl + lalt + lcmd - left : yabai -m window --resize left:-20:0
+ctrl + lalt + lcmd - down : yabai -m window --resize bottom:0:20
+ctrl + lalt + lcmd - up : yabai -m window --resize top:0:-20
+ctrl + lalt + lcmd - right : yabai -m window --resize right:20:0
+
+# balance windows
+ctrl + lalt - 0x18 : yabai -m space --balance # =
+
+# toggle window split
+ctrl + lalt - 0x2F : yabai -m window --toggle split # .
+
+# toggle window zoom
+ctrl + lalt + shift - 0x18 : yabai -m window --toggle zoom-fullscreen # +
+
+# toggle float (attach)
+ctrl + lalt - p : yabai -m window --toggle float
+
+# toggle opacity
+ctrl + lalt - o : ~/.yabai/yabai-toggle-opacity.sh
