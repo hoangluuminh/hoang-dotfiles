@@ -146,4 +146,4 @@ ctrl + lalt + shift - 0x18 : yabai -m window --toggle zoom-fullscreen # +
 ctrl + lalt - p : yabai -m window --toggle float
 
 # toggle opacity
-ctrl + lalt - o : ~/.yabai/yabai-toggle-opacity.sh
+# ctrl + lalt - o : ~/.yabai/yabai-toggle-opacity.sh

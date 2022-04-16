@@ -18,9 +18,9 @@ set autoindent
 set foldlevel=0  " close all folds
 
 " Indenting
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set cindent
 set diffopt+=vertical

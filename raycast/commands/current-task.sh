@@ -16,7 +16,7 @@ result=$1
 
 if [[ $result == "" ]]
 then
-  result="[Have a nice day!]"
+  result=""
 fi
 
 echo "$result" > ~/.dotfiles/raycast/commands/files/current-task.txt
