@@ -29,3 +29,6 @@ alias ls='lsd'
 
 # RubyGems
 export GEM_HOME="$HOME/.gem"
+
+# Go
+export PATH=$(go env GOPATH)/bin:$PATH
